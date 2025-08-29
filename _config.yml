@@ -202,7 +202,7 @@ collections:
   research:
     output: true
     permalink: /:collection/:path/
-  teach:
+  teaching:
     output: true
     permalink: /:collection/:path/
   awards:
@@ -232,17 +232,17 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+    #  share: true
       comments: true
 
   # _teaching
   - scope:
       path: ""
-      type: teach
+      type: teaching
     values:
       layout: single
       author_profile: true
-      share: true
+    #  share: true
       comments: true
       # _awards
   - scope:
@@ -251,7 +251,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+    #  share: true
       comments: true
     # _socical_media
   - scope:
@@ -260,7 +260,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+  #    share: true
       comments: true
 
   - scope:
