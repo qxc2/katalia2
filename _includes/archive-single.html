@@ -7,10 +7,18 @@
 {% endif %}
 
 {% if post.id %}
-  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" | strip %}
 {% else %}
-  {% assign title = post.title %}
+  {% assign title = post.title | strip %}
 {% endif %}
+
+{%- comment -%}
+  Compute safe comparisons to suppress fallback titles like “Teaching”
+  (derived from filename/slug) and the collection name.
+{%- endcomment -%}
+{% assign title_lc = title | downcase %}
+{% assign coll_lc  = post.collection | downcase %}
+{% assign slug_lc  = post.slug | downcase %}
 
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
@@ -26,7 +34,11 @@
       </div>
     {% endif %}
 
-    {% if title and title != post.collection %}
+    {%- comment -%}
+      Only render the title if it’s not blank and not an auto-fallback
+      (i.e., not equal to the collection name or the slug).
+    {%- endcomment -%}
+    {% if title_lc != "" and title_lc != coll_lc and title_lc != slug_lc %}
       <h2 class="archive__item-title" itemprop="headline">
         {% if post.link %}
           <a href="{{ post.link }}">{{ title }}</a>
@@ -49,12 +61,39 @@
       </p>
     {% endif %}
 
-    {# optional date safeguard — only render if date exists #}
-    {% if post.date and post.date != '' %}
+    {%- comment -%}
+      Only render a year if the date is truly present and not blank.
+      This avoids Liquid’s 1900 default on invalid/empty dates.
+    {%- endcomment -%}
+    {% if post.date != blank %}
       <p class="archive__item-date">{{ post.date | date: "%Y" }}</p>
     {% endif %}
 
-    {# citations, downloads remain unchanged #}
-    ...
+    {# keep your citation/download blocks unchanged #}
+    {% if post.citation and post.paperurl and post.slidesurl and post.bibtexurl %}
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+    {% elsif post.citation and post.paperurl and post.slidesurl %}
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
+    {% elsif post.citation and post.paperurl and post.bibtexurl %}
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+    {% elsif post.citation and post.paperurl %}
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a></p>
+    {% elsif post.citation and post.slidesurl and post.bibtexurl %}
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl}}">Download Bibtex</a></p>
+    {% elsif post.citation and post.slidesurl %}
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
+    {% elsif post.citation and post.bibtexurl %}
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+    {% elsif post.paperurl and post.bibtexurl %}
+      <p><a href=" {{ post.paperurl }} ">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+    {% elsif post.paperurl %}
+      <p><a href=" {{ post.paperurl }} ">Download Paper</a></p>
+    {% elsif post.slidesurl and post.bibtexurl %}
+      <p><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+    {% elsif post.slidesurl %}
+      <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
+    {% elsif post.bibtexurl %}
+      <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+    {% endif %}
   </article>
 </div>
