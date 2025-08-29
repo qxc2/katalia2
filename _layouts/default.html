@@ -28,4 +28,22 @@ layout: compress
     {% include scripts.html %}
 
   </body>
+<script>
+(function() {
+  const hour = new Date().getHours();
+  const isNight = (hour >= 18 || hour < 6);
+
+  // Load saved preference if it exists
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  } else {
+    if (isNight) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+  }
+})();
+</script>
 </html>
