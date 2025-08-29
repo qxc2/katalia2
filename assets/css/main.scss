@@ -41,11 +41,3 @@
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands
 ;
-:root {
-  @import "theme/{{ site.site_theme | default: 'default' | append: '_light' }}";
-}
-
-/* Apply dark theme when data-theme="dark" is on <html> */
-[data-theme="dark"] {
-  @import "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}";
-}
