@@ -40,7 +40,7 @@
     "vendor/font-awesome/fontawesome",
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands
-/* Default = light theme */
+;
 :root {
   @import "theme/{{ site.site_theme | default: 'default' | append: '_light' }}";
 }
@@ -49,4 +49,3 @@
 [data-theme="dark"] {
   @import "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}";
 }
-;
