@@ -4,17 +4,9 @@ collection: teaching
 #type: "Undergraduate course"
 permalink: /teaching/2014-spring-teaching-1
 #venue: "University 1, Department"
-#date: 2014-01-01
-#location: "City, Country"
+date: 2014-01-01
+location: "The University of Texas at Dallas"
 ---
-
-This is a description of a teaching experience. You can use markdown like any other post.
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
+ **Independent Instructor**, The University of Texas at Dallas- Undergraduate core: Managerial Methods in Decision Making Under Uncertainty
+ - Fall 2025, class size: 75, main topics: statistics- Spring 2025, class size: 65, main topics: statistics, evaluation: 4.8/5.0-
+ - Nomination for President’s Teaching Excellence Award
