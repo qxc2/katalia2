@@ -1,5 +1,5 @@
 ---
-collection: teach
+collection: teaching
 permalink: /teaching/
 ---
 
