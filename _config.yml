@@ -202,7 +202,7 @@ collections:
   research:
     output: true
     permalink: /:collection/:path/
-  teaching:
+  teach:
     output: true
     permalink: /:collection/:path/
   awards:
