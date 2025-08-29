@@ -203,7 +203,7 @@ collections:
   research:
     output: true
     permalink: /:collection/:path/
-  teaching:
+  teach:
     output: true
     permalink: /:collection/:path/
   awards:
@@ -239,7 +239,7 @@ defaults:
   # _teaching
   - scope:
       path: ""
-      type: teaching
+      type: teach
     values:
       layout: single
       author_profile: true
