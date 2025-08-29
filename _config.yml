@@ -244,7 +244,10 @@ defaults:
       layout: single
       author_profile: true
     #  share: true
+      show_date: false
       comments: true
+
+
       # _awards
   - scope:
       path: ""
