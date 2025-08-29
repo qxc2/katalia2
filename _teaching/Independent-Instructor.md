@@ -4,7 +4,7 @@ collection: teaching
 #type: "Undergraduate course"
 permalink: /teaching/
 #venue: "University 1, Department"
-date: 2025
+date: 2025-1-1
 location: "The University of Texas at Dallas"
 ---
  The University of Texas at Dallas- Undergraduate core: Managerial Methods in Decision Making Under Uncertainty
