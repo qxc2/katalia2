@@ -124,10 +124,10 @@ atom_feed:
 
 
 # SEO Related
-google_site_verification :
-bing_site_verification   :
-alexa_site_verification  :
-yandex_site_verification :
+#google_site_verification :
+#bing_site_verification   :
+#alexa_site_verification  :
+#yandex_site_verification :
 
 
 
@@ -204,7 +204,7 @@ collections:
     permalink: /:collection/:path/
   teach:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/
   awards:
     output: true
     permalink: /:collection/:path/
