@@ -1,7 +1,7 @@
 ---
 collection: teaching
 permalink: /teaching/
-layout: single
+layout: default
 ---
 
 **Independent Instructor**, The University of Texas at Dallas- Undergraduate core: Managerial Methods in Decision Making Under Uncertainty
