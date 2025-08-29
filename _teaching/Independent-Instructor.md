@@ -2,7 +2,7 @@
 #title: "Teaching experience 1"
 collection: teaching
 #type: "Undergraduate course"
-permalink: /teaching/Independent_Instructor
+permalink: /teaching/Independent-Instructor
 #venue: "University 1, Department"
 #date: 2014-01-01
 location: "The University of Texas at Dallas"
