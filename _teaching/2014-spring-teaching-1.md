@@ -4,7 +4,7 @@ collection: teaching
 #type: "Undergraduate course"
 permalink: /teaching/2014-spring-teaching-1
 #venue: "University 1, Department"
-date: 2014-01-01
+#date: 2014-01-01
 location: "The University of Texas at Dallas"
 ---
  **Independent Instructor**, The University of Texas at Dallas- Undergraduate core: Managerial Methods in Decision Making Under Uncertainty
