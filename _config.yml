@@ -204,7 +204,7 @@ collections:
     permalink: /:collection/:path/
   teach:
     output: true
-    permalink: /:collection/
+    permalink: /:collection/:path/
   awards:
     output: true
     permalink: /:collection/:path/
